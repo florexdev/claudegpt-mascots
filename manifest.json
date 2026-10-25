@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Pip - ChatGPT ve Claude Maskotu",
+  "version": "3.0.0",
+  "description": "ChatGPT için chibi robot Pip, Claude için pixel karakter. Yazarken dinler, cevap hazırlarken çalışır, cevap akarken koşar.",
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Pip ayarları"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": [
+        "mascot-svg.js",
+        "critter-svg.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

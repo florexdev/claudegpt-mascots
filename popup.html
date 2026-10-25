@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><title>Pip</title>
+<style>
+  body{margin:0;width:260px;padding:16px;background:#0e1330;color:#dbe4ff;font:13px/1.4 system-ui,sans-serif}
+  h1{font-size:15px;margin:0 0 14px;font-weight:700}
+  label{display:flex;justify-content:space-between;align-items:center;margin:10px 0;gap:10px}
+  input[type=range]{width:130px;accent-color:#7f93ff}
+  select{background:#1a2260;color:#dbe4ff;border:1px solid #2b3a8a;border-radius:6px;padding:4px 6px}
+  button{margin-top:10px;width:100%;background:#1a2260;color:#dbe4ff;border:1px solid #2b3a8a;border-radius:8px;padding:8px;cursor:pointer;font:inherit}
+  button:hover{background:#243080} button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #9db0ff;outline-offset:2px}
+  small{display:block;margin-top:12px;color:#8fa0e0}
+</style></head>
+<body>
+  <h1>Pip ayarları</h1>
+  <label>Görünür <input type="checkbox" id="visible"></label>
+  <label>Boyut <input type="range" id="size" min="100" max="240" step="10"></label>
+  <label>Karakter <select id="char"><option value="auto">Otomatik</option><option value="pip">Pip (robot)</option><option value="pixel">Pixel (Claude)</option></select></label>
+  <label>Ekran dili <select id="lang"><option value="en">English</option><option value="tr">Türkçe</option></select></label>
+  <label>Ses efektleri <input type="checkbox" id="sound"></label>
+  <button id="reset">Konumu sıfırla</button>
+  <small>Alt+M: gizle / göster. Pip'e çift tıklayınca el sallar.</small>
+  <script src="popup.js"></script>
+</body></html>
