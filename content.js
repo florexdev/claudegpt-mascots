@@ -257,12 +257,17 @@
       return;
     }
     wake();
-    if (state === 'idle' || state === 'listening' || state === 'concerned' || state === 'hello') {
-      const now = Date.now();
-      const second = now - lastClick < 350;
-      lastClick = now;
-      if (second) { setState(CH.hello === 'hello' ? 'hello' : 'happy', second && CH.hello === 'hello' ? 'wake' : null); revertAfter(1800); }
-      else { setState('poke'); revertAfter(900); }
+    const now = Date.now();
+    const second = now - lastClick < 400;
+    lastClick = second ? 0 : now;
+    if (generating) return;
+    if (second) {
+      // Çift tıklama: selam ver (poke durumu dahil her durumdan)
+      setState(CH.hello === 'hello' ? 'hello' : 'happy', 'wake');
+      revertAfter(1800);
+    } else if (state === 'idle' || state === 'listening' || state === 'concerned' || state === 'hello') {
+      setState('poke');
+      revertAfter(900);
     }
   });
   window.addEventListener('resize', () => { if (host.style.left) { const r = host.getBoundingClientRect(); place(r.left, r.top); } });
