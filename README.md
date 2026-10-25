@@ -1,4 +1,4 @@
-# Pip v3 — ChatGPT & Claude Mascot
+# Pip — ChatGPT & Claude Mascot
 
 **A tiny animated companion for your AI conversations.** Pip reacts as you type and while the assistant generates a response.
 
@@ -57,7 +57,7 @@ Pip requests the browser's **`storage`** permission to save its settings and pos
 
 ---
 
-# Pip v3 — ChatGPT ve Claude Maskotu
+# Pip — ChatGPT ve Claude Maskotu
 
 **Yapay zekâ sohbetlerinize eşlik eden küçük, animasyonlu bir maskot.** Pip siz yazarken ve asistan yanıt üretirken farklı animasyonlarla tepki verir.
 
